@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.IO;
+using System;
 
 namespace FileSystemViewer
 {
@@ -6,7 +7,10 @@ namespace FileSystemViewer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var myFiles = new CompositeOfFoldersAndFiles.Folder(new DirectoryInfo("C:\\"));
+            myFiles.Open();
+            myFiles.ShowInfo();
+            Console.ReadKey();
         }
     }
 }
